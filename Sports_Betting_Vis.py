@@ -89,6 +89,10 @@ def run_app():
 
     odds_master = load_data()
     st.title('Understanding NBA Sports Betting odds')
+    st.caption("In the following visualizations we will try to get a better sense of how the sports betting market"
+               "works. Specifically, we will look at NBA data and see how accurate the oddsmakers are for "
+               "Spreads, Totals, and Wins. We will then examine the relationships between various sports betting"
+               "markets")
     st.header('Brief Look at Our Data')
     st.write(odds_master.head(5))
 
@@ -133,13 +137,15 @@ def run_app():
 
     st.subheader("Observations:")
     st.caption("A quick run through of the data makes it clear to betting on the Money Line is generally a bad idea: "
-               "Vegas gets it correct the majority of the time. However, for some teams and years, Vegas does a poor job,"
-               "for example the Totals Market for the LA Lakers @ Home - they were under 67% of the time in 2018,"
-               "and predominantly under in 2019 and 2020! Similarly, Cleveland in 2012 and 2017 beat their spread"
-               "the majority of the time")
+               "Vegas gets it correct the majority of the time. However, for some teams and years, Vegas does a poor job."
+               "For example the Totals Market for the LA Lakers when they are at Home. They were under 67% of the time in 2018,"
+               "and predominantly under in 2019 and 2020! Similarly, Cleveland in 2012 and 2017 beat their spread "
+               "by over 60%")
 
     st.header('Are there identifiable relationships between the markets?')
     st.caption("NOTE: The money line odds have been converted to percentages for ease of interpretation")
+    st.caption("Now, we want to dive a little deeper into the markets and see if we can find some interesting relationships "
+               "between them")
 
     col3, col4 = st.columns(2)
     x_variable = col3.selectbox("X-Axis Variable:", ("HomeML", "AwayML", "Spread", "TotalPoints"))
@@ -158,15 +164,29 @@ def run_app():
     col4.pyplot(f3)
 
     st.subheader("Observations Part 2")
-    st.caption("Playing around with the x and y axis we start to notice a few interesting relationships."
-               "Firstly, the Home and Away Monelylines have a nearly perfect negative linear correlation which"
+    st.caption("Playing around with the x and y axis there are a few things to note."
+               "First, the Home and Away Monelylines have a nearly perfect negative linear correlation. This"
                "makes sense - they are mutually exclusive outcomes. Additionally, we see that there is NO easy"
-               "visual relationship between the totals market and the spread and the money line markets. A strong"
+               " relationship between the totals market and the spread and the money line markets. A strong"
                "team that is favored to win does not mean the odds will indicate a higher or smaller total. Finally,"
                "we see something of an absolute value function when we plot the Spread against the"
-               "Moneyline percentages and it becomes clear that whenthe odds are 50/50 for each team winning,"
+               "Moneyline percentages and it becomes clear that when the odds are 50/50 for each team winning,"
                "they set the spread at 0. As the odds swing in favor of one team or the other, the spread"
-               "increases linearly")
+               "increases linearly.")
+
+    st.header("Final Thoughts")
+    st.caption("We have shown through some basic visualization and analysis that the Sports Books for NBA"
+               "Data can be difficult to beat. They are correct about the spread 50% of the time"
+               "Which is what they are designed to do. however, there are some instances for specific teams"
+               "where there are falters - it would require some further investigation as to why this is the case"
+               "Additionally, we were able to identify relationships between various markets "
+               "that can potential help us find good bets in the future. For example, we should not expect the totals"
+               "market to be related to the spread, and we should expect the spread to increase linearly with the"
+               "probability that the favorite will win. If we find bets that fall outside this trend, this represents "
+               "a potential opportunity to beat the market")
+
+    st.caption("The raw data can be found here: https://www.sportsbookreviewsonline.com/scoresoddsarchives/nba/nbaoddsarchives.htm")
+    st.caption("")
 
 
 
