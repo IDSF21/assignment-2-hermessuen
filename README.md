@@ -32,8 +32,9 @@ This was done as an individual project so all of the work was done by me. The or
 - Code visualizations (3 hours)
 - Debug, final touches (1 hour)
 - Deploy (10 minutes)
+- Write up (1 hour)
 
-The aspects that took the most time were cleaning the dataset and actually coding up the visualizations. Since the raw data was in a form
+The aspects that took the most time were cleaning the dataset and actually coding up the visualizations. Since the raw data was in a form that was not exactly amenable to the questions that I wanted to answer, I had to perform a signifcant amount of cleaning. This really took the bulk of the time. I found the development process for this to be at times stratightforward and iterative. For example, the general workflow was linear, but there would be times where I would come up with a possible question and, before building a visualization, I first tried to answer it directly with numbers. Oftentimes I found that those questions did not need a visualization so it pushed me to come up with more interesting ideas 
 
 
 
